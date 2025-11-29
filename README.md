@@ -35,21 +35,21 @@ RUN_MODE=continuous cargo run
 
 ## Configuration
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `ETH_RPC_ENDPOINT` | `https://ethereum-rpc.publicnode.com` | Ethereum RPC URL |
-| `INDEX_FILE` | `data/index.json` | Index storage path |
-| `METRICS_PORT` | `9090` | Metrics server port |
-| `RUN_MODE` | `test` | `test`, `fetch`, `server`, `continuous` |
+| Variable           | Default                               | Description                             |
+| ------------------ | ------------------------------------- | --------------------------------------- |
+| `ETH_RPC_ENDPOINT` | `https://ethereum-rpc.publicnode.com` | Ethereum RPC URL                        |
+| `INDEX_FILE`       | `data/index.json`                     | Index storage path                      |
+| `METRICS_PORT`     | `9090`                                | Metrics server port                     |
+| `RUN_MODE`         | `test`                                | `test`, `fetch`, `server`, `continuous` |
 
 ## Run Modes
 
-| Mode | Description |
-|------|-------------|
-| `test` | Fetch 3 recent blocks, display results |
-| `fetch` | Fetch 10 blocks from last indexed |
-| `server` | Metrics server only (no fetching) |
-| `continuous` | Fetcher loop + metrics server |
+| Mode         | Description                            |
+| ------------ | -------------------------------------- |
+| `test`       | Fetch 3 recent blocks, display results |
+| `fetch`      | Fetch 10 blocks from last indexed      |
+| `server`     | Metrics server only (no fetching)      |
+| `continuous` | Fetcher loop + metrics server          |
 
 ## Metrics Endpoints
 
@@ -66,13 +66,13 @@ curl http://localhost:9090/stats
 
 ## Prometheus Metrics
 
-| Metric | Type | Description |
-|--------|------|-------------|
+| Metric                         | Type    | Description          |
+| ------------------------------ | ------- | -------------------- |
 | `indexer_blocks_indexed_total` | counter | Total blocks indexed |
-| `indexer_last_block` | gauge | Last indexed block |
-| `indexer_transactions_total` | counter | Total transactions |
-| `rpc_errors_total` | counter | RPC errors |
-| `rpc_latency_seconds` | gauge | Average RPC latency |
+| `indexer_last_block`           | gauge   | Last indexed block   |
+| `indexer_transactions_total`   | counter | Total transactions   |
+| `rpc_errors_total`             | counter | RPC errors           |
+| `rpc_latency_seconds`          | gauge   | Average RPC latency  |
 
 ## Project Structure
 
@@ -92,7 +92,3 @@ src/
 ```bash
 cargo test
 ```
-
-## License
-
-MIT
